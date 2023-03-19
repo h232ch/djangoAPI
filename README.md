@@ -1,0 +1,24 @@
+# djangoAPI
+
+## Install
+1. pip install django
+3. pip install djangorestframework
+4. pip install django-cors-headers
+5. Install mysql on the test system
+ - DB NAME : mytestdb
+ - DB CONNETION INFO : root/123qwe
+
+## Run
+1. python manage.py runserver 8000
+
+## Setting
+1. python manage.py startapp EmployeeApp
+2. python manage.py makemigrations EmployeeApp
+3. python manage.py migrate EmployeeApp
+
+## Code
+It's related to angularCLI frontend server <br>
+`https://github.com/h232ch/angularCli2` <br><br>
+
+You can make employees and department on this application <br>
+And manage these with `create`, `delete`, `update`
