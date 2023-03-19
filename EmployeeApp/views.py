@@ -1,15 +1,10 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
-
 from EmployeeApp.models import Department, Employee
 from EmployeeApp.serializers import DepartmentSerializer, EmployeeSerializer
-
 from django.core.files.storage import default_storage
-
-
-# Create your views here.
 
 
 @csrf_exempt
@@ -18,6 +13,7 @@ def departmentApi(request, id=0):
         departments = Department.objects.all()
         departments_serializer = DepartmentSerializer(departments, many=True)
         return JsonResponse(departments_serializer.data, safe=False)
+
     elif request.method == 'POST':
         department_data = JSONParser().parse(request)
         department_serializer = DepartmentSerializer(data=department_data)
@@ -25,6 +21,7 @@ def departmentApi(request, id=0):
             department_serializer.save()
             return JsonResponse("Added Successfully", safe=False)
         return JsonResponse("Failed to Add", safe=False)
+
     elif request.method == 'PUT':
         department_data = JSONParser().parse(request)
         department = Department.objects.get(DepartmentId=department_data['DepartmentId'])
@@ -32,6 +29,7 @@ def departmentApi(request, id=0):
         if departments_serializer.is_valid():
             departments_serializer.save()
             return JsonResponse("Update Successfully", safe=False)
+
     elif request.method == 'DELETE':
         department = Department.objects.get(DepartmentId=id)
         department.delete()
@@ -45,6 +43,7 @@ def employeeApi(request, id=0):
         employees_serializer = EmployeeSerializer(employees, many=True)
         print(employees_serializer)
         return JsonResponse(employees_serializer.data, safe=False)
+
     elif request.method == 'POST':
         employee_data = JSONParser().parse(request)
         employee_serializer = EmployeeSerializer(data=employee_data)
@@ -70,7 +69,7 @@ def employeeApi(request, id=0):
 
 
 @csrf_exempt
-def SaveFile(request):
+def saveFile(request):
     file = request.FILES['file']
     file_name = default_storage.save(file.name, file)
     return JsonResponse(file_name, safe=False)
