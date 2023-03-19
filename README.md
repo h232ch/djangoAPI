@@ -4,6 +4,9 @@
 1. pip install django
 3. pip install djangorestframework
 4. pip install django-cors-headers
+5. Install mysql on the test system
+ - DB NAME : mytestdb
+ - DB CONNETION INFO : root/123qwe
 
 ## Run
 1. python manage.py runserver 8000
