@@ -4,7 +4,8 @@
 1. pip install django
 3. pip install djangorestframework
 4. pip install django-cors-headers
-5. Install mysql on the test system
+5. pip install cryptography
+6. Install mysql on the test system
  - DB NAME : mytestdb
  - DB CONNETION INFO : root/123qwe
 
