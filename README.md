@@ -1,11 +1,11 @@
 # djangoAPI
 
 ## Install
-1. pip install django
-3. pip install djangorestframework
-4. pip install django-cors-headers
-5. pip install cryptography
-6. Install mysql on the test system
+1. pip3 install django==4.1.7
+2. pip install djangorestframework==23.0.1
+3. pip install django-cors-headers==3.14.0
+4. pip install cryptography==40.0.1
+5. Install mysql on the test system
  - DB NAME : mytestdb
  - DB CONNETION INFO : root/123qwe
 
