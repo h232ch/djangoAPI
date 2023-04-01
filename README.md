@@ -22,4 +22,4 @@ It's related to angularCLI frontend server <br>
 `https://github.com/h232ch/angularCli2` <br><br>
 
 You can make employees and department on this application <br>
-And manage these with `create`, `delete`, `update`
+And manage these with `create`, `read`, `update`, `delete`
